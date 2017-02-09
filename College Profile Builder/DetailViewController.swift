@@ -7,39 +7,55 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: NSDate? {
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var numberOfStudentsTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    let realm = try! Realm()
+    var detailItem: College? {
         didSet {
             // Update the view.
             self.configureView()
         }
     }
-
-
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.configureView()
+    }
+    
+    
+    
+    
+    
+    
+    func configureView() {
+        // Update the user interface for the detail item
+        if let college = self.detailItem {
+            if  nameTextField != nil {
+                nameTextField.text = college.name
+                locationTextField.text = college.location
+                numberOfStudentsTextField.text = String(college.numberOfStudents)
+                imageView.image = UIImage(data: college.image)
+            }
+        }
+    }
+    @IBAction func onSaveButtonTapped(_ sender: UIButton) {
+        if let college = self.detailItem {
+            try! realm.write({
+                college.name = nameTextField.text!
+                college.location = locationTextField.text!
+                college.numberOfStudents = Int(numberOfStudentsTextField.text!)!
+                college.image = UIImagePNGRepresentation(imageView.image!)!
+            })
+            
+        }
+    }
+    
 }
-
