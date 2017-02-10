@@ -22,5 +22,5 @@ class College: Object {
         self.image = image
     }
     
-
+    
 }

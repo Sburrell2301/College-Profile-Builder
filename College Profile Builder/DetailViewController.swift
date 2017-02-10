@@ -9,7 +9,6 @@
 import UIKit
 import RealmSwift
 
-
 class DetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -23,17 +22,11 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
-    
-    
-    
-    
-    
     
     func configureView() {
         // Update the user interface for the detail item
