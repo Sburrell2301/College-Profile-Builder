@@ -56,18 +56,24 @@ class MasterViewController: UITableViewController {
             textField.placeholder = "Number Of Students"
             textField.keyboardType = UIKeyboardType.numberPad
         }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Website"
+            textField.keyboardType = UIKeyboardType.URL
+            
+        }
         let caancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(caancelAction)
         let insertAction = UIAlertAction(title: "Add", style: .default) { (action) in
             let nameTextField = alert.textFields![0] as UITextField
             let locationTextField = alert.textFields![1] as UITextField
             let numberOfStudentsTextField = alert.textFields![2] as UITextField
+            let websiteTextField = alert.textFields![3] as UITextField
             guard let image = UIImage(named: nameTextField.text!) else {
                 print ("missing \(nameTextField.text!) image")
                 return
             }
             if let numberOfStudents = Int(numberOfStudentsTextField.text!) {
-                let college = College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: numberOfStudents, image: UIImagePNGRepresentation(image)!)
+                let college = College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: numberOfStudents, image: UIImagePNGRepresentation(image)!, website: websiteTextField.text!)
                 self.objects.append(college)
                 try! self.realm.write {
                     self.realm.add(college)
