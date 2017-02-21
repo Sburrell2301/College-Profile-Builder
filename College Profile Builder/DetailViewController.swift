@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import SafariServices
 
+
 class DetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
