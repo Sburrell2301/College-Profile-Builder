@@ -9,14 +9,15 @@
 import UIKit
 import RealmSwift
 import SafariServices
+import CoreLocation
 
-
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var numberOfStudentsTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var websiteTextField: UITextField!
+    let imagePicker = UIImagePickerController()
     let realm = try! Realm()
     var detailItem: College? {
         didSet {
@@ -50,6 +51,12 @@ class DetailViewController: UIViewController {
         present(svc, animated: true, completion: nil)
         
     }
+    
+    @IBAction func onPhotoButtonTapped(_ sender: UIButton) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func onSaveButtonTapped(_ sender: UIButton) {
         if let college = self.detailItem {
             try! realm.write({

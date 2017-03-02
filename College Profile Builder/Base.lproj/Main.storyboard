@@ -82,6 +82,14 @@
                                     <action selector="onTappedGoButton:" destination="JEX-9P-axG" eventType="touchUpInside" id="lfo-A0-kNh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6H-nU-b2J">
+                                <rect key="frame" x="167" y="435" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <action selector="onPhotoButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="kzD-lh-tFb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
