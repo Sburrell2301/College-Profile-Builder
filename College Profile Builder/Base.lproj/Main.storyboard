@@ -29,6 +29,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
                 <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
@@ -59,16 +60,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dFP-JU-l62">
                                 <rect key="frame" x="62" y="239" width="250" height="150"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI3-Hv-Ti1">
-                                <rect key="frame" x="164" y="397" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="fLZ-pj-8T7"/>
-                                </constraints>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="onSaveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="KSi-AQ-CKD"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SfJ-51-Tdw">
                                 <rect key="frame" x="112" y="201" width="150" height="30"/>
                                 <nil key="textColor"/>
@@ -90,11 +81,25 @@
                                     <action selector="onPhotoButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="kzD-lh-tFb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI3-Hv-Ti1">
+                                <rect key="frame" x="170" y="387" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="KSi-AQ-CKD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-6n-CfZ">
+                                <rect key="frame" x="266" y="127" width="46" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <segue destination="eij-jj-Pzy" kind="show" identifier="ShowMapSegue" id="fkf-8e-Vem"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SfJ-51-Tdw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-117.5" id="1hc-gE-SuJ"/>
-                            <constraint firstItem="JI3-Hv-Ti1" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="4Ei-83-Rya"/>
                             <constraint firstItem="dFP-JU-l62" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-19.5" id="6yB-XC-K8Y"/>
                             <constraint firstItem="dFP-JU-l62" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="7xH-fW-NaY"/>
                             <constraint firstItem="dFP-JU-l62" firstAttribute="top" secondItem="SfJ-51-Tdw" secondAttribute="bottom" constant="8" symbolic="YES" id="AL9-Xe-H6i"/>
@@ -105,12 +110,13 @@
                             <constraint firstItem="9QC-Eu-wLH" firstAttribute="leading" secondItem="H67-S1-gGW" secondAttribute="leading" id="N3T-h8-Bt6"/>
                             <constraint firstItem="9QC-Eu-wLH" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="96" id="Rdf-5N-5CE"/>
                             <constraint firstItem="9QC-Eu-wLH" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="VUV-lu-15b"/>
+                            <constraint firstItem="JI3-Hv-Ti1" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="68.5" id="Y4l-FB-ohC"/>
                             <constraint firstItem="H67-S1-gGW" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-191.5" id="bS9-wA-yF3"/>
                             <constraint firstItem="H67-S1-gGW" firstAttribute="leading" secondItem="joQ-tc-y33" secondAttribute="leading" id="ex4-F3-9ap"/>
+                            <constraint firstItem="JI3-Hv-Ti1" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="fXw-B5-sFY"/>
                             <constraint firstItem="Y7c-Qq-VuP" firstAttribute="leading" secondItem="SfJ-51-Tdw" secondAttribute="trailing" constant="8" id="fli-Cj-BFu"/>
                             <constraint firstItem="Y7c-Qq-VuP" firstAttribute="top" secondItem="SfJ-51-Tdw" secondAttribute="top" id="jQ4-Jo-sDP"/>
                             <constraint firstItem="joQ-tc-y33" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-153.5" id="jcZ-yA-Nf8"/>
-                            <constraint firstItem="JI3-Hv-Ti1" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="78.5" id="jrw-Mh-3cN"/>
                             <constraint firstItem="joQ-tc-y33" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="mEh-nt-bys"/>
                             <constraint firstItem="dFP-JU-l62" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="46" id="rCg-wk-eE6"/>
                             <constraint firstItem="joQ-tc-y33" firstAttribute="leading" secondItem="SfJ-51-Tdw" secondAttribute="leading" id="u0o-Lf-601"/>
@@ -126,9 +132,44 @@
                         <outlet property="websiteTextField" destination="SfJ-51-Tdw" id="sUZ-Rq-AAY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="128.18590704647679"/>
+        </scene>
+        <!--Map Veiw-->
+        <scene sceneID="131-Le-23w">
+            <objects>
+                <viewController title="Map Veiw" id="eij-jj-Pzy" customClass="MapViewController" customModule="College_Profile_Builder" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bdb-vu-cTs"/>
+                        <viewControllerLayoutGuide type="bottom" id="miq-1F-8YC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S21-qO-XYP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uN4-kq-pkG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kuP-7Y-TJg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="GCd-CD-zWZ">
+                            <connections>
+                                <action selector="searchButton:" destination="eij-jj-Pzy" id="IKs-3B-ksP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapKit" destination="uN4-kq-pkG" id="6PY-DX-Z63"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pa-YF-Dvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650" y="128"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -203,8 +244,27 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZyQ-lu-HsF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JXz-7N-Kyj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PRq-cD-zM8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eij-jj-Pzy" kind="relationship" relationship="rootViewController" id="nCz-pr-aBl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DfH-pb-IXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650" y="-630"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
+        <segue reference="fkf-8e-Vem"/>
     </inferredMetricsTieBreakers>
 </document>

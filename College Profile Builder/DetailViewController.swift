@@ -19,13 +19,13 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var websiteTextField: UITextField!
     let imagePicker = UIImagePickerController()
     let realm = try! Realm()
+   
     var detailItem: College? {
         didSet {
             // Update the view.
             self.configureView()
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,6 +42,12 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
                 websiteTextField.text = college.website
                 imageView.image = UIImage(data: college.image)
             }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! MapViewController
+        if segue.identifier == "ShowMapSegue" {
+        dvc.locationText = "\(locationTextField.text!)"
         }
     }
     @IBAction func onTappedGoButton(_ sender: UIButton) {
